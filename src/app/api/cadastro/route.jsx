@@ -34,3 +34,10 @@ export async function POST(request, response) {
   switch (info) {
     case 'cadastro':
       const novoUsuario = await handleCadastro(nome, email, senha);
+      if (novoUsuario) {
+        return NextResponse.json({ status: true, user: novoUsuario });
+      }
+    default:
+      return NextResponse.json({ status: false });
+  }
+}
