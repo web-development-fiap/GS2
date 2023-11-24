@@ -23,3 +23,6 @@ const handleCadastro = async (nome, email, senha) => {
       process.cwd() + '/src/app/api/usuarios/db.json',
       JSON.stringify(lista),
     );
+
+    return novoUsuario;
+};
