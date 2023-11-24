@@ -61,3 +61,58 @@ const Cadastro = () => {
       console.log(error);
     }
   };
+
+  return (
+    <div>
+      <div className={styles.cadastro}>
+        <h1>Cadastre-se</h1>
+        <div>
+          <form onSubmit={handleCadastro}>
+            <div>
+              <label htmlFor="idNome"></label>
+              <input
+                type="text"
+                name="nome"
+                id="idNome"
+                placeholder="Digite seu nome"
+                value={usuario.nome}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="idEmail"></label>
+              <input
+                type="email"
+                name="email"
+                id="idEmail"
+                placeholder="Digite seu email"
+                value={usuario.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="idSenha"></label>
+              <input
+                type="password"
+                name="senha"
+                id="idSenha"
+                placeholder="Digite sua senha"
+                value={usuario.senha}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <button className={styles.cad} type="submit">
+              Cadastrar
+            </button>
+          </form>
+        </div>
+      </div>
+      <h2 className={styles.msg}>{msgStatus}</h2>
+    </div>
+  );
+};
+
+export default Cadastro;
