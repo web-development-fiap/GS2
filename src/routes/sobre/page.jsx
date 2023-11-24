@@ -5,7 +5,7 @@ export default function Sobre() {
     <div className={styles.background}>
       <div className={styles.container}>
         <div>
-          <h1>Bem-vindo ao nosso site</h1>
+          <h1>Bem-vindo ao nossooo site</h1>
           <p>
             Dedicado a proporcionar uma jornada transformadora em direção a uma
             vida mais equilibrada e saudável. Estamos aqui para ajudar você a
