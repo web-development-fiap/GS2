@@ -14,3 +14,5 @@ const handleCadastro = async (nome, email, senha) => {
       process.cwd() + '/src/app/api/usuarios/db.json',
       'utf8',
     );
+    const lista = await JSON.parse(file);
+    const id = lista.usuarios[lista.usuarios.length - 1].id + 1;
