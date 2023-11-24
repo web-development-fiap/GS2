@@ -32,3 +32,14 @@ const handleLogin = async (email, senha) => {
       return NextResponse.json({ status: false, message: 'Erro no servidor' });
     }
   };
+  export async function POST(request, response) {
+    const { info, email, senha } = await request.json();
+  
+    switch (info) {
+      case 'login':
+        const result = await handleLogin(email, senha);
+        return result;
+      default:
+        return NextResponse.json({ status: false, message: 'Ação inválida' });
+    }
+  }
