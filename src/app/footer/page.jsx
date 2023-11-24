@@ -25,4 +25,12 @@ export default function Footer() {
             </div>
           ))}
 
-         
+    <div className={styles['classInfo']}>
+            <p>Turma: 1TDSPF</p>
+          </div>
+          <div className={styles['copyRight']}>
+            <p>All rights reserved ©</p>
+          </div>
+        </div>
+      );
+    }  
