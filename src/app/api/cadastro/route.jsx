@@ -30,3 +30,7 @@ const handleCadastro = async (nome, email, senha) => {
 
 export async function POST(request, response) {
     const { info, nome, email, senha } = await request.json();
+    
+  switch (info) {
+    case 'cadastro':
+      const novoUsuario = await handleCadastro(nome, email, senha);
