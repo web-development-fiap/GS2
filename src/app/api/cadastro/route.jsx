@@ -16,3 +16,10 @@ const handleCadastro = async (nome, email, senha) => {
     );
     const lista = await JSON.parse(file);
     const id = lista.usuarios[lista.usuarios.length - 1].id + 1;
+
+    const novoUsuario = { id, nome, email, senha };
+    lista.usuarios.push(novoUsuario);
+    await fs.writeFile(
+      process.cwd() + '/src/app/api/usuarios/db.json',
+      JSON.stringify(lista),
+    );
