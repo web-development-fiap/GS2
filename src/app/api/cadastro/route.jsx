@@ -11,26 +11,26 @@ export async function GET(request, { params }) {
 }
 
 const handleCadastro = async (nome, email, senha) => {
-    const file = await fs.readFile(
-      process.cwd() + '/src/app/api/usuarios/db.json',
-      'utf8',
-    );
-    const lista = await JSON.parse(file);
-    const id = lista.usuarios[lista.usuarios.length - 1].id + 1;
+  const file = await fs.readFile(
+    process.cwd() + '/src/app/api/usuarios/db.json',
+    'utf8',
+  );
+  const lista = await JSON.parse(file);
+  const id = lista.usuarios[lista.usuarios.length - 1].id + 1;
 
-    const novoUsuario = { id, nome, email, senha };
-    lista.usuarios.push(novoUsuario);
-    await fs.writeFile(
-      process.cwd() + '/src/app/api/usuarios/db.json',
-      JSON.stringify(lista),
-    );
+  const novoUsuario = { id, nome, email, senha };
+  lista.usuarios.push(novoUsuario);
+  await fs.writeFile(
+    process.cwd() + '/src/app/api/usuarios/db.json',
+    JSON.stringify(lista),
+  );
 
-    return novoUsuario;
+  return novoUsuario;
 };
 
 export async function POST(request, response) {
-    const { info, nome, email, senha } = await request.json();
-    
+  const { info, nome, email, senha } = await request.json();
+
   switch (info) {
     case 'cadastro':
       const novoUsuario = await handleCadastro(nome, email, senha);
