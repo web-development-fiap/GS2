@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    padding: 15px 0px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0px auto;
+    align-items: center;
+  }
+  
+  .header ul{
+    display: flex;
+    font-size: 1.125rem;
+  }
+  
+  .header li + li {
+    margin-left: 30px;
+  }
