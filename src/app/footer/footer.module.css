@@ -4,5 +4,13 @@
     text-align: center;
   }
   
+  .studentInfo {
+    margin-bottom: 10px;
+  }
+  
+  .studentInfo p {
+    margin: 0;
+  }
+  
   
   
