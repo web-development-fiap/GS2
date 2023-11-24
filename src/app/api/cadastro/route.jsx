@@ -9,3 +9,8 @@ export async function GET(request, { params }) {
   const lista = await JSON.parse(file);
   return NextResponse.json(lista);
 }
+const handleCadastro = async (nome, email, senha) => {
+    const file = await fs.readFile(
+      process.cwd() + '/src/app/api/usuarios/db.json',
+      'utf8',
+    );
