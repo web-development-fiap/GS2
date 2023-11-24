@@ -16,3 +16,8 @@
     margin-bottom: 30px;
   }
   
+  .home p {
+    text-align: center;
+    font-size: 1.125rem;
+    max-width: 900px;
+  }
