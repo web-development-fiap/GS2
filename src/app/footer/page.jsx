@@ -15,4 +15,14 @@ export default function Footer() {
       { name: 'Luigi Exposito Uchiyama', rm: 'RM99520', role: 'Front-end' },
     ];
   
-   
+    return (
+        <div className={styles.footer}>
+          {students.map((student) => (
+            <div className={styles['studentInfo']} key={student.rm}>
+              <p>
+                {student.name} ({student.rm}) - {student.role}
+              </p>
+            </div>
+          ))}
+
+         
